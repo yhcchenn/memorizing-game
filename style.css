@@ -1,0 +1,114 @@
+/* header */
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0 auto;
+    width: 85%;
+}
+
+#header .title {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#header .title img {
+    max-width: 3em;
+}
+
+#header .title h2 {
+    padding-left: 0.5em;
+    color: #995C23;
+}
+
+#header .score {
+    margin: 0;
+    color: #995C23;
+}
+
+#header .tried {
+    margin-top: 0;
+}
+
+/* card */
+#cards {
+    display: flex;
+    /* 宣告 #cards 為 flex container，故子元素 .card 為 flex item */
+    flex-wrap: wrap;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.card {
+    /* 牌桌容器的樣式 */
+    flex: 7% 1 1; /* 每個 item 分配容器的寬度  */
+    height: 8vw; /* 每個 item 會依據視窗大小維持 8% 高度  */
+    border: 2px solid #e0e0e0;
+    margin: 2px; /* 設定卡片邊距 */
+    box-sizing: border-box; /* 設定 box-sizing*/
+    border-radius:5%;
+    background-color: #995C23;
+    color: #EBF0F3;
+
+    /* 牌面元素的樣式 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card .symbol {
+    align-self: center;
+    font-size: 30px; 
+}
+
+.card p {
+  margin: 5px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.card p:last-child {
+    transform: rotate(180deg);
+}
+
+.back {
+    background-image: url('https://as1.ftcdn.net/v2/jpg/03/70/63/06/1000_F_370630659_UGdRc2EAG1cPob2XmI6EfjESzlRbGH4a.jpg');
+    background-size: cover;
+}
+
+.paired {
+    background-color: #CBBFBC;
+    color: #995C23;
+}
+
+.wrong {
+    animation-name: wrongAnimation;
+    animation-duration: 0.2s; /* 動畫停留秒數 */
+    animation-iteration-count: 5; /* 動畫顯示次數 */
+  }
+  @keyframes wrongAnimation {
+    to {
+      border: 2px solid #DBAB82;
+    }
+  }
+
+  /* Game finished */
+.completed {
+    position: absolute;
+    z-index: 999;
+    top: 33vh;
+    background-color: RGBA(203, 191, 188, 0.8);
+    width: 100vw;
+    padding: 80px 0;
+  }
+  .completed > p {
+    font-size: 1.5em;
+    color: #333333;
+    text-align: center;
+    margin: 0;
+  }
+  .completed > p:first-child {
+    font-size: 3em;
+    font-weight: 700;
+    color: #995C23;
+  }
